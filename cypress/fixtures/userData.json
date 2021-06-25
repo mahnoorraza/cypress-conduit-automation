@@ -1,0 +1,44 @@
+[
+  {
+    "testScenerio" : "Enter Invalid data",
+    "userName" : "mrtester3",
+    "email" : "mrtester3@",
+    "password" : "Tre"
+  },
+  {
+    "testScenerio" : "Leave empty Fields ",
+    "userName" : "" ,
+    "email" : "",
+    "password" : "" 
+  },
+  {
+    "testScenerio" : "Enter invalid user name and empty email an password",
+    "userName" : "mrte",
+    "email" : "" ,
+    "password" : "" 
+  },
+  {
+    "testScenerio" : "Enter valid user name and invalid email and empty password", 
+    "userName" : "mrtester3",
+    "email" : "mrtester3@",
+    "password" : ""
+  },
+  {
+    "testScenerio" : "Enter valid user name and email and empty password",
+    "userName" : "mrtester3",
+    "email" : "mrtester3@gmail.com",
+    "password" : ""
+  },
+  {
+    "testScenerio" :  "Enter valid user name and password and empty email",
+    "userName" : "mrtester3" ,
+    "email" : "",
+    "password" : "Trees123"
+  },
+  {
+    "testScenerio" : "Enter valid Data",
+    "userName" : "mrtester7",
+    "email" : "mtester7@gmail.com",
+    "password" : "Trees123"
+  }
+]
