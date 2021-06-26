@@ -2,8 +2,8 @@
 
 const tests = require('../../fixtures/userData.json')
 
-describe('Verify SignUp Functionality', function(){
-
+describe('Verify SignUp Functionality', function()
+{
     //--------------------------------------------------------------------------------Hook--------------------------------------------------------------------------------------
     beforeEach(() => 
     {
@@ -16,7 +16,8 @@ describe('Verify SignUp Functionality', function(){
 
     //----------------------------------------------------------------------------Signup Site--------------------------------------------------------------------------------------
 
-    tests.forEach(test => {
+    tests.forEach(test => 
+    {
         it(test.testScenerio, function()
         {   
             cy.wait(5000)
@@ -25,4 +26,4 @@ describe('Verify SignUp Functionality', function(){
             cy.signUp(test.userName, test.email, test.password)
         })
     })
-})// Close SignUp
+})

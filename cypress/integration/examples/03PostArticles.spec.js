@@ -2,9 +2,9 @@
 
 const tests = require('../../fixtures/articlesData.json')
 
-describe('Verify Post Article Functionality', function(){
-
-    //--------------------------------------------------------------------------------Hook--------------------------------------------------------------------------------------
+describe('Verify Post Article Functionality', function()
+{
+    //--------------------------------------------------------------------------------Hook-------------------------------------------------------------------------------------
     before(() =>
     {   
         cy.visit("https://react-redux.realworld.io/")
@@ -15,12 +15,9 @@ describe('Verify Post Article Functionality', function(){
     {
         // load example.json fixture file and storein the test context object
           cy.fixture('articlesData.json').as('articlesData')
-
-
     })
 
-    //----------------------------------------------------------------------------Signin Site--------------------------------------------------------------------------------------
-
+    //----------------------------------------------------------------------------Signin Site----------------------------------------------------------------------------------
     it("Signin with valid user", function()
     {   
         cy.xpath("/html/body/div/div/nav/div/ul/li[2]/a").click()
@@ -29,9 +26,9 @@ describe('Verify Post Article Functionality', function(){
         cy.wait(5000)
     })
 
-    //----------------------------------------------------------------------Multiple Articles Pulish--------------------------------------------------------------------------------
-
-    // tests.forEach(test => {
+    //----------------------------------------------------------------------Multiple Articles Pulish---------------------------------------------------------------------------
+    // tests.forEach(test => 
+    // {
     //     it("Verify Post article functionality", function(){
     //         cy.xpath("/html/body/div/div/nav/div/ul/li[2]/a").click()
     //         cy.postArticles(test.articleTitle, test.articleAbout, test.articleBody, test.articleTags)
@@ -39,58 +36,51 @@ describe('Verify Post Article Functionality', function(){
     //     })
     // })
 
-    //----------------------------------------------------------------------Single Articles Pulish--------------------------------------------------------------------------------------
-    
+    //----------------------------------------------------------------------Single Articles Pulish-----------------------------------------------------------------------------
     it("Verify Post Article Functionality", function(){
         cy.xpath("/html/body/div/div/nav/div/ul/li[2]/a").click()
         cy.postArticles(tests[0].articleTitle, tests[0].articleAbout, tests[0].articleBody, tests[0].articleTags)
         cy.wait(5000)
     })
 
-    //----------------------------------------------------------------------Add Comment on Article-----------------------------------------------------------------------------------
+    //------------------------------------------------------------- -Publish same Articles Multiple Times----------------------------------------------------------------------
+    // it("Post Same article Multiple time", function()
+    // {
+    //     for(let i=0; i<10; i++)
+    //     {
+    //         cy.xpath("/html/body/div/div/nav/div/ul/li[2]/a").click()
+    //         cy.postArticles(tests[0].articleTitle, tests[0].articleAbout, tests[0].articleBody, tests[0].articleTags)
+    //         cy.wait(5000)
+    //     }
+    //     cy.xpath("/html/body/div/div/nav/div/ul/li[1]/a").click()
+    //     cy.wait(2000)
+    //     cy.xpath("/html/body/div/div/nav/div/ul/li[4]/a").click()
+    //     cy.wait(2000)
+    //     cy.scrollTo('bottom')
+    // })
+
+    //----------------------------------------------------------------------Add Comment on Article----------------------------------------------------------------------------
     it("Verify Add Comment on Article functionality", function(){
         //cy.xpath("/html/body/div/div/nav/div/ul/li[2]/a").click()
         cy.addComment("Lorem ipsum sed immit")
         cy.wait(5000)
     })
 
-    //----------------------------------------------------------------------Edit Published Article------------------------------------------------------------------------------------
+    //----------------------------------------------------------------------Edit Published Article----------------------------------------------------------------------------
     it("Verify Edit Article Functionality", function(){
         cy.xpath("/html/body/div/div/nav/div/ul/li[2]/a").click()
         cy.postArticles("This is Edited title", "This is edited about", "This is edited Body", "Brain")
         cy.wait(5000)
     })
 
-    //--------------------------------------------------------------------Delete Published Article----------------------------------------------------------------------------------
+    //--------------------------------------------------------------------Delete Published Article----------------------------------------------------------------------------
     it("Verify Delete Article functionality", function(){
         cy.xpath("/html/body/div/div/div/div[1]/div/div/span/button").click()   // Click on Delete Article Button
         cy.wait(5000)
     })
 
-    //--------------------------------------------------------------------------- Signout----------------------------------------------------------------------------------
+    //---------------------------------------------------------------------------- Signout------------------------------------------------------------------------------------
     it("Verify Signout functionality", function(){
         cy.SignOut()
-    })
-
-
-
-
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    //  it("Verify Post article functionality", function(){
-    // //     cy.xpath("/html/body/div/div/nav/div/ul/li[2]/a").click()
-    // //     cy.xpath("/html/body/div/div/div/div/div/div/form/fieldset/fieldset[1]/input")
-    // //     cy.postArticles(tests.articleTitle[0], tests.articleAbout[0], tests.articleBody[0], tests.articleTags[0])
-    // cy.postArticles("asdsdf", "asfdsfasdf", "fashkhdsfjskd", "skdlfjklsjdflksd")
-    // })
-    
-})// Close SignUp
+    })   
+})

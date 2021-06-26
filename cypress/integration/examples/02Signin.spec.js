@@ -2,8 +2,8 @@
 
 const tests = require('../../fixtures/userData.json')
 
-describe('Verify Signin Functionality', function(){
-
+describe('Verify Signin Functionality', function()
+{
     //--------------------------------------------------------------------------------Hook--------------------------------------------------------------------------------------
     beforeEach(() => 
     {
@@ -11,25 +11,17 @@ describe('Verify Signin Functionality', function(){
           cy.fixture('userdata.json').as('userData')
           cy.wait(3000)
           cy.visit("https://react-redux.realworld.io/")
-
     })
 
-    //----------------------------------------------------------------------------Signin Site--------------------------------------------------------------------------------------
-
-    // tests.forEach(test => {
-    //     it(test.testScenerio, function()
-    //     {   
-    //         cy.wait(5000)
-    //         cy.xpath("/html/body/div/div/nav/div/ul/li[2]/a").click()
-    //         cy.wait(2000)
-    //         cy.signin(test.email, test.password)
-    //     })
-    // })
-    it('dsfsdf', function(){
-        cy.xpath("/html/body/div/div/nav/div/ul/li[2]/a").click()
-        cy.signin("mtester7@gmail.com", "Trees123")
-
+    //----------------------------------------------------------------------------Signin Site-----------------------------------------------------------------------------------
+    tests.forEach(test => 
+    {
+        it(test.testScenerio, function()
+        {   
+            cy.wait(5000)
+            cy.xpath("/html/body/div/div/nav/div/ul/li[2]/a").click()
+            cy.wait(2000)
+            cy.signin(test.email, test.password)
+        })
     })
-    
-
-})// Close SignUp
+})
