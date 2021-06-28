@@ -14,7 +14,7 @@ describe('Example to Demostrate the use of skip in cypress', () =>
         cy.get('button[type="submit"]').click()
     })
 
-    it.skip('Validate Google Wiki Page has opened', () => {
+    it.only('Validate Google Wiki Page has opened', () => {
         cy.get('h1#firstHeading').contains('Google')
         cy.title().should('eq', 'Google - Wikipedia')
     })
